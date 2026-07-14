@@ -333,10 +333,9 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            flex-direction: column;
-            gap: 150px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 60px;
             position: relative;
         }
         
@@ -358,10 +357,10 @@
             min-width: 300px;
             position: relative;
             z-index: 1;
-            text-align: center;
+            text-align: right;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-end;
         }
         
         .hero-badge {
@@ -382,10 +381,10 @@
         }
         
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 900;
-            line-height: 2;
-            margin-bottom: 80px;
+            line-height: 1.6;
+            margin-bottom: 30px;
             color: var(--dark);
         }
         
@@ -410,23 +409,22 @@
         }
         
         .hero-content p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--gray);
-            margin-bottom: 100px;
-            line-height: 3;
-            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 2;
+            max-width: 550px;
         }
         
         .hero-buttons {
             display: flex;
-            gap: 24px;
+            gap: 16px;
             flex-wrap: wrap;
-            justify-content: center;
         }
         
         .hero-buttons button {
-            padding: 20px 50px;
-            font-size: 1.1rem;
+            padding: 14px 32px;
+            font-size: 1rem;
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -2703,6 +2701,27 @@
                         <i class="fas fa-chalkboard-user"></i>
                         انضم كأستاذ
                     </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=400&fit=crop" 
+                         alt="طالب يشاهد دروس مباشرة" 
+                         style="border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 100%; height: auto;">
+                    <div class="badge-float">
+                        <span class="badge-icon video"><i class="fas fa-video"></i></span>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--dark);">دروس مباشرة</div>
+                            <div style="font-size:0.7rem; color:var(--gray);">تفاعل فوري</div>
+                        </div>
+                    </div>
+                    <div class="badge-float">
+                        <span class="badge-icon star"><i class="fas fa-star"></i></span>
+                        <div>
+                            <div style="font-size:0.9rem; color:var(--dark);">أفضل الأساتذة</div>
+                            <div style="font-size:0.7rem; color:var(--gray);">معتمدون</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
