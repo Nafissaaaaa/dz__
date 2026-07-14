@@ -331,9 +331,10 @@
             margin: 40px auto 60px;
             padding: 0 30px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
             gap: 50px;
             position: relative;
         }
@@ -356,6 +357,7 @@
             min-width: 300px;
             position: relative;
             z-index: 1;
+            text-align: center;
         }
         
         .hero-badge {
@@ -415,6 +417,7 @@
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -2654,12 +2657,9 @@
                     <span id="liveCount" class="nav-badge" style="display:none;">0</span>
                 </a>
                 <a onclick="showReferral()" id="referralTab">
-                    <i class="fas fa-link nav-icon" style="color:var(--gold);"></i>
                     <span class="nav-label">الإحالة</span>
-                    <span class="nav-badge" style="background:var(--gold);">💰</span>
                 </a>
                 <a onclick="showSupport()" id="helpTab">
-                    <i class="fas fa-question-circle nav-icon"></i>
                     <span class="nav-label">مساعدة</span>
                 </a>
                 <a onclick="showLogin()" id="loginTabNav">
@@ -2698,7 +2698,9 @@
             </div>
             <div class="hero-image">
                 <div class="hero-image-wrapper">
-                    <div class="floating-icon"><i class="fas fa-laptop-code"></i></div>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=400&fit=crop" 
+                         alt="طالب يشاهد دروس مباشرة" 
+                         style="border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 100%; height: auto;">
                     <div class="badge-float">
                         <span class="badge-icon video"><i class="fas fa-video"></i></span>
                         <div>
