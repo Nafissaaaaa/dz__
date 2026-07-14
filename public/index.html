@@ -1067,18 +1067,15 @@
             background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 6px 16px;
+            border-radius: 20px;
             cursor: pointer;
-            margin-top: 14px;
+            margin-top: 10px;
             width: 100%;
-            font-weight: 700;
+            font-weight: 600;
             transition: var(--transition);
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            font-size: 0.8rem;
+            text-align: center;
         }
         
         .view-profile-btn:hover {
@@ -2690,7 +2687,7 @@
                     تعلم مع أفضل الأساتذة
                     <span class="highlight">في الجزائر</span>
                 </h1>
-                <p>دروس خصوصية عبر الفيديو مع نخبة من الأساتذة المعتمدين. ادفع عبر البطاقة الذهبية بسهولة وأمان</p>
+                <p>دروس خصوصية عبر الفيديو مع الأساتذة المعتمدين. ادفع عبر البطاقة الذهبية بسهولة وأمان</p>
                 
                 <div class="hero-buttons">
                     <button class="btn-primary" onclick="showTeachers()">
@@ -2765,7 +2762,7 @@
                         <div class="about-feature-item">
                             <span class="icon gold"><i class="fas fa-trophy"></i></span>
                             <h4>أساتذة معتمدون</h4>
-                            <p>نخبة من أفضل الأساتذة في الجزائر</p>
+                            <p>الأساتذة في الجزائر</p>
                         </div>
                         <div class="about-feature-item">
                             <span class="icon purple"><i class="fas fa-mobile-alt"></i></span>
@@ -2796,24 +2793,17 @@
             </div>
         </section>
 
-        <!-- ===== TEACHERS SECTION - مع فلتر اسم المادة أو التخصص فقط ===== -->
+        <!-- ===== TEACHERS SECTION ===== -->
         <section id="teachersSection" class="section-container" style="display: none;">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-users"></i> نخبة الأساتذة</span>
+                <span class="section-tag"><i class="fas fa-users"></i> الأساتذة</span>
                 <h2 class="section-title">أساتذتنا المعتمدون <i class="fas fa-chalkboard-user"></i></h2>
                 <p class="section-subtitle">تعلم على يد أفضل الخبراء في مختلف التخصصات</p>
             </div>
             
-            <div class="search-filter-container">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchTeacher" placeholder="ابحث عن أستاذ بالاسم أو التخصص..." oninput="filterTeachers()">
-                </div>
-                <div class="filter-group">
-                    <button class="clear-filters-btn" onclick="clearFilters()">
-                        <i class="fas fa-undo"></i> مسح
-                    </button>
-                </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchTeacher" placeholder="ابحث عن الاستاذ بالاسم او المادة" oninput="filterTeachers()" style="color: white;">
             </div>
             
             <div id="teachersList" class="teachers-grid"></div>
@@ -3835,12 +3825,8 @@
                     '<img src="' + imageUrl + '" class="teacher-image" onerror="this.src=\'https://ui-avatars.com/api/?name=' + encodeURIComponent(t.full_name) + '&background=0f5cbf&color=fff&size=120\'" onclick="event.stopPropagation(); showFullImage(this.src)">' +
                     '<h3>' + escapeHtml(t.full_name) + '</h3>' +
                     '<p class="specialization"><i class="fas fa-book"></i> ' + escapeHtml(t.specialization || 'تخصص عام') + '</p>' +
-                    '<div class="teacher-experience"><i class="fas fa-briefcase"></i> ' + (t.experience || '0') + ' سنة خبرة</div>' +
                     levelDisplay +
-                    '<div class="teacher-bio">' + (t.bio ? escapeHtml(t.bio) : 'لا توجد نبذة') + '</div>' +
-                    '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + t.id + ')">' +
-                        '<i class="fas fa-eye"></i> زيارة صفحة الأستاذ' +
-                    '</button>' +
+                    '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + t.id + ')">زيارة صفحة الأستاذ</button>' +
                 '</div>';
             });
             container.innerHTML = html;
@@ -3903,11 +3889,8 @@
                         '<img src="' + imageUrl + '" class="teacher-image" onerror="this.src=\'https://ui-avatars.com/api/?name=' + encodeURIComponent(o.teacher_name) + '&background=0f5cbf&color=fff&size=120\'" onclick="event.stopPropagation(); showFullImage(this.src)">' +
                         '<h3>' + escapeHtml(o.teacher_name) + '</h3>' +
                         '<p class="specialization"><i class="fas fa-book"></i> ' + escapeHtml(o.teacher_specialization || 'تخصص عام') + '</p>' +
-                        '<div class="teacher-experience"><i class="fas fa-briefcase"></i> ' + (o.experience || '0') + ' سنة خبرة</div>' +
                         '<span class="live-badge" style="display:inline-block; margin:6px 0;">🔴 بث مباشر</span>' +
-                        '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + o.teacher_id + ')" style="margin-top:10px;">' +
-                            '<i class="fas fa-eye"></i> زيارة صفحة الأستاذ' +
-                        '</button>' +
+                        '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + o.teacher_id + ')" style="margin-top:10px;">زيارة صفحة الأستاذ</button>' +
                     '</div>';
                 });
                 container.innerHTML = html;
