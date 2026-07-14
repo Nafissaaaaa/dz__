@@ -2816,8 +2816,7 @@
 
         <!-- ===== LIVE SECTION ===== -->
         <section id="liveSection" class="section-container" style="display: none;">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-broadcast"></i> بث مباشر</span>
+            <div class="section-header" style="margin-bottom: 20px;">
                 <h2 class="section-title">البث المباشر الآن <i class="fas fa-video"></i></h2>
                 <p class="section-subtitle">انضم إلى الدروس المباشرة وتفاعل مع الأساتذة في الوقت الفعلي</p>
             </div>
@@ -3889,7 +3888,7 @@
                         '<img src="' + imageUrl + '" class="teacher-image" onerror="this.src=\'https://ui-avatars.com/api/?name=' + encodeURIComponent(o.teacher_name) + '&background=0f5cbf&color=fff&size=120\'" onclick="event.stopPropagation(); showFullImage(this.src)">' +
                         '<h3>' + escapeHtml(o.teacher_name) + '</h3>' +
                         '<p class="specialization"><i class="fas fa-book"></i> ' + escapeHtml(o.teacher_specialization || 'تخصص عام') + '</p>' +
-                        '<span class="live-badge" style="display:inline-block; margin:6px 0;">🔴 بث مباشر</span>' +
+                        '<span class="live-badge" style="display:inline-block; margin:6px 0;">🔴 مباشر</span>' +
                         '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + o.teacher_id + ')" style="margin-top:10px;">زيارة صفحة الأستاذ</button>' +
                     '</div>';
                 });
