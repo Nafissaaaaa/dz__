@@ -328,13 +328,13 @@
         /* ===== HERO SECTION ===== */
         .hero {
             max-width: 1280px;
-            margin: 40px auto 60px;
+            margin: 0 auto;
             padding: 0 30px;
+            min-height: calc(100vh - 200px);
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
             gap: 50px;
             position: relative;
         }
@@ -357,7 +357,6 @@
             min-width: 300px;
             position: relative;
             z-index: 1;
-            text-align: center;
         }
         
         .hero-badge {
@@ -417,7 +416,6 @@
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         /* ===== ABOUT SECTION ===== */
