@@ -965,14 +965,14 @@
         }
 
         /* ===== CARDS ===== */
-        .teachers-grid, .developers-grid {
+        .teachers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 28px;
             margin-top: 10px;
         }
         
-        .teacher-card, .developer-card {
+        .teacher-card {
             background: white;
             border-radius: var(--radius-md);
             padding: 28px 24px;
@@ -2106,7 +2106,7 @@
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2rem; }
             .nav-links a { padding: 6px 12px; font-size: 0.75rem; }
-            .teachers-grid, .developers-grid { grid-template-columns: 1fr; }
+            .teachers-grid { grid-template-columns: 1fr; }
             .stats-container { flex-direction: column; }
             .stat-card { min-width: auto; }
             .download-card { padding: 30px 20px; }
@@ -2636,7 +2636,6 @@
                 <div class="logo-text">
                     <span>Zoom</span>
                     <span class="highlight">Dz</span>
-                    <span class="logo-badge">.edu</span>
                 </div>
             </div>
             
@@ -2659,8 +2658,9 @@
                     <span class="nav-label">الإحالة</span>
                     <span class="nav-badge" style="background:var(--gold);">💰</span>
                 </a>
-                <a onclick="showDevelopers()" id="developersTab">
-                    <i class="fas fa-code nav-icon"> فريق المطورين </i>
+                <a onclick="showSupport()" id="helpTab">
+                    <i class="fas fa-question-circle nav-icon"></i>
+                    <span class="nav-label">مساعدة</span>
                 </a>
                 <a onclick="showLogin()" id="loginTabNav">
                     <i class="fas fa-user nav-icon"></i>
@@ -2679,33 +2679,11 @@
         <!-- ===== HOME SECTION ===== -->
         <section id="homeSection" class="hero">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-rocket"></i>
-                    منصة تعليمية جزائرية
-                </div>
                 <h1>
                     تعلم مع أفضل الأساتذة
                     <span class="highlight">في الجزائر</span>
                 </h1>
                 <p>دروس خصوصية عبر الفيديو مع نخبة من الأساتذة المعتمدين. ادفع عبر البطاقة الذهبية بسهولة وأمان</p>
-                
-                <div class="stats-container">
-                    <div class="stat-card">
-                        <span class="icon"><i class="fas fa-chalkboard-user"></i></span>
-                        <div class="number" id="teacherCount">0</div>
-                        <div class="label">أستاذ معتمد</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="icon"><i class="fas fa-video"></i></span>
-                        <div class="number" id="liveCountStat">0</div>
-                        <div class="label">بث مباشر الآن</div>
-                    </div>
-                    <div class="stat-card">
-                        <span class="icon"><i class="fas fa-users"></i></span>
-                        <div class="number" id="studentCount">0</div>
-                        <div class="label">طالب مسجل</div>
-                    </div>
-                </div>
                 
                 <div class="hero-buttons">
                     <button class="btn-primary" onclick="showTeachers()">
@@ -2715,10 +2693,6 @@
                     <button class="btn-success" onclick="showTeacherRegister()">
                         <i class="fas fa-chalkboard-user"></i>
                         انضم كأستاذ
-                    </button>
-                    <button class="btn-accent" onclick="showSupport()">
-                        <i class="fas fa-headset"></i>
-                        الدعم الفني
                     </button>
                 </div>
             </div>
@@ -2955,85 +2929,6 @@
                     سجل المكافآت
                 </h4>
                 <div id="rewardHistory"></div>
-            </div>
-        </section>
-
-        <!-- ===== DEVELOPERS SECTION - صور أكبر مع إمكانية النقر ===== -->
-        <section id="developersSection" class="section-container" style="display: none;">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-code"></i> فريق الإبداع</span>
-                <h2 class="section-title">فريق المطورين <i class="fas fa-rocket"></i></h2>
-                <p class="section-subtitle">هذا المشروع من إبداع نخبة من المطورين الجزائريين الطموحين</p>
-            </div>
-            
-            <div id="developersList" class="developers-grid">
-
-                <!-- عثمانية محمد الصالح - Backend & Database -->
-                <div class="developer-card">
-                    <img src="/images/othmaniya.jpg" class="developer-image" 
-                         onerror="this.src='https://ui-avatars.com/api/?name=عثمانية+محمد+الصالح&background=0f5cbf&color=fff&size=120'"
-                         alt="عثمانية محمد الصالح"
-                         onclick="showFullImage(this.src)">
-                    <h3>عثمانية محمد الصالح</h3>
-                    <p class="role"><i class="fas fa-server"></i> مطور الواجهة الخلفية</p>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px;">
-                        <span class="developer-role backend"><i class="fas fa-code"></i> Backend Developer</span>
-                        <span class="developer-role database"><i class="fas fa-database"></i> Database Designer</span>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px; line-height: 1.6;">
-                        <i class="fas fa-database" style="color: var(--secondary);"></i> مسؤول عن الخادم، APIs، وتصميم قاعدة البيانات
-                    </p>
-                    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 12px;">
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-github"></i></a>
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- نفيسة هلابي - Frontend & Support -->
-                <div class="developer-card">
-                    <img src="/images/nafissa.jpg" class="developer-image"
-                         onerror="this.src='https://ui-avatars.com/api/?name=نفيسة+هلابي&background=c62828&color=fff&size=120'"
-                         alt="نفيسة هلابي"
-                         onclick="showFullImage(this.src)">
-                    <h3>نفيسة هلابي</h3>
-                    <p class="role"><i class="fas fa-laptop-code"></i> مطورة الواجهة الأمامية</p>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px;">
-                        <span class="developer-role frontend"><i class="fas fa-palette"></i> Frontend Developer</span>
-                        <span class="developer-role" style="background:#e0f2fe; color:#0369a1;"><i class="fas fa-headset"></i> Support</span>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px; line-height: 1.6;">
-                        <i class="fas fa-paint-brush" style="color: #c62828;"></i> مسؤولة عن تصميم الواجهة، UX/UI، ودعم المستخدمين
-                    </p>
-                    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 12px;">
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-github"></i></a>
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- صالح مليك - Marketing & Sales -->
-                <div class="developer-card">
-                    <img src="/images/salah.jpg" class="developer-image"
-                         onerror="this.src='https://ui-avatars.com/api/?name=صالح+مليك&background=0369a1&color=fff&size=120'"
-                         alt="صالح مليك"
-                         onclick="showFullImage(this.src)">
-                    <h3>صالح مليك</h3>
-                    <p class="role"><i class="fas fa-bullhorn"></i> مسؤول التسويق والمبيعات</p>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 8px;">
-                        <span class="developer-role marketing"><i class="fas fa-bullhorn"></i> Marketing</span>
-                        <span class="developer-role" style="background:#dcfce7; color:#15803d;"><i class="fas fa-chart-line"></i> Sales</span>
-                    </div>
-                    <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px; line-height: 1.6;">
-                        <i class="fas fa-chart-line" style="color: #0369a1;"></i> مسؤول عن التسويق الرقمي، استراتيجيات المبيعات، ونمو المنصة
-                    </p>
-                    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 12px;">
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-github"></i></a>
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" style="color: var(--gray); font-size: 1.3rem; transition: var(--transition);"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -3284,15 +3179,10 @@
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-logo">
-            <span>Zoom</span><span class="highlight">Dz</span> <span style="color:#64748b; font-weight:400;">.edu</span>
+            <span>Zoom</span><span class="highlight">Dz</span>
         </div>
         <p><i class="fas fa-credit-card"></i> الدفع عبر الذهبية | EDAHABIA | CCP</p>
         <p style="font-size: 0.85rem;">© 2026 ZoomDz - منصة التعليم الجزائرية - جميع الحقوق محفوظة</p>
-        <div class="footer-dev">
-            <i class="fas fa-code"></i> طور بواسطة: 
-            <span>عثمانية محمد الصالح</span> · 
-            <span>مليك صالح</span>
-        </div>
     </footer>
 
     <!-- ===== TOAST ===== -->
@@ -3423,7 +3313,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3438,7 +3327,6 @@
             document.getElementById('teachersSection').style.display = 'block';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3453,7 +3341,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'block';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3468,7 +3355,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'block';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3477,27 +3363,12 @@
             loadReferralData();
         }
 
-        function showDevelopers() {
-            document.getElementById('homeSection').style.display = 'none';
-            document.getElementById('aboutSection').style.display = 'none';
-            document.getElementById('teachersSection').style.display = 'none';
-            document.getElementById('liveSection').style.display = 'none';
-            document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'block';
-            document.getElementById('profileSection').style.display = 'none';
-            document.getElementById('loginSection').style.display = 'none';
-            document.getElementById('downloadAppSection').style.display = 'none';
-            document.getElementById('supportSection').style.display = 'none';
-            setActiveTab('developersTab');
-        }
-
         function showLogin() {
             document.getElementById('homeSection').style.display = 'none';
             document.getElementById('aboutSection').style.display = 'none';
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'block';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3513,7 +3384,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'block';
@@ -3527,7 +3397,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3541,7 +3410,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('profileSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'block';
             document.getElementById('downloadAppSection').style.display = 'none';
@@ -3562,7 +3430,7 @@
         }
 
         function setActiveTab(tabId) {
-            var tabs = ['homeTab', 'teachersTab', 'liveTab', 'referralTab', 'developersTab', 'loginTabNav'];
+            var tabs = ['homeTab', 'teachersTab', 'liveTab', 'referralTab', 'helpTab', 'loginTabNav'];
             tabs.forEach(function(id) {
                 var el = document.getElementById(id);
                 if (el) el.classList.remove('active');
@@ -4049,7 +3917,6 @@
             document.getElementById('teachersSection').style.display = 'none';
             document.getElementById('liveSection').style.display = 'none';
             document.getElementById('referralSection').style.display = 'none';
-            document.getElementById('developersSection').style.display = 'none';
             document.getElementById('loginSection').style.display = 'none';
             document.getElementById('downloadAppSection').style.display = 'none';
             document.getElementById('supportSection').style.display = 'none';
@@ -4394,7 +4261,6 @@
         function init() {
             console.log('🚀 بدء تشغيل المنصة مع reCAPTCHA v2...');
             console.log('🔐 reCAPTCHA v2 مفعل لحماية النماذج');
-            console.log('👨‍💻 المطورين: عثمانية محمد الصالح، مليك صالح');
             
             readReferralFromURL();
             showHome();
