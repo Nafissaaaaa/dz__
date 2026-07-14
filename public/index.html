@@ -2795,15 +2795,14 @@
 
         <!-- ===== TEACHERS SECTION ===== -->
         <section id="teachersSection" class="section-container" style="display: none;">
-            <div class="section-header">
-                <span class="section-tag"><i class="fas fa-users"></i> الأساتذة</span>
+            <div class="section-header" style="margin-bottom: 20px;">
                 <h2 class="section-title">أساتذتنا المعتمدون <i class="fas fa-chalkboard-user"></i></h2>
                 <p class="section-subtitle">تعلم على يد أفضل الخبراء في مختلف التخصصات</p>
             </div>
             
-            <div class="search-box">
+            <div class="search-box" style="max-width: 400px; margin: 0 auto 30px;">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchTeacher" placeholder="ابحث عن الاستاذ بالاسم او المادة" oninput="filterTeachers()" style="color: white;">
+                <input type="text" id="searchTeacher" placeholder="ابحث عن الاستاذ بالاسم او المادة" oninput="filterTeachers()">
             </div>
             
             <div id="teachersList" class="teachers-grid"></div>
