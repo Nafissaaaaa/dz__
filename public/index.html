@@ -978,9 +978,9 @@
         .teachers-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
+            gap: 20px;
             margin-top: 10px;
-            max-width: 800px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -988,7 +988,7 @@
         .teacher-card {
             background: white;
             border-radius: var(--radius-md);
-            padding: 28px 24px;
+            padding: 16px 14px;
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             text-align: center;
@@ -2803,7 +2803,7 @@
                 <p class="section-subtitle">تعلم على يد أفضل الخبراء في مختلف التخصصات</p>
             </div>
             
-            <div class="search-box" style="max-width: 400px; margin: 0 auto 30px;">
+            <div class="search-box" style="max-width: 500px; margin: 0 auto 30px;">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchTeacher" placeholder="ابحث عن الاستاذ بالاسم او المادة" oninput="filterTeachers()">
             </div>
@@ -3825,7 +3825,7 @@
                 
                 html += '<div class="teacher-card" onclick="viewTeacherProfile(' + t.id + ')">' +
                     '<img src="' + imageUrl + '" class="teacher-image" onerror="this.src=\'https://ui-avatars.com/api/?name=' + encodeURIComponent(t.full_name) + '&background=0f5cbf&color=fff&size=120\'" onclick="event.stopPropagation(); showFullImage(this.src)">' +
-                    '<h3>أستاذ ' + escapeHtml(t.full_name) + '</h3>' +
+                    '<h3>' + escapeHtml(t.full_name) + '</h3>' +
                     '<p class="specialization"><i class="fas fa-book"></i> ' + escapeHtml(t.specialization || 'تخصص عام') + '</p>' +
                     levelDisplay +
                     '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + t.id + ')">زيارة صفحة الأستاذ</button>' +
@@ -3889,7 +3889,7 @@
                     var imageUrl = o.teacher_profile_url || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(o.teacher_name) + '&background=0f5cbf&color=fff&size=120';
                     html += '<div class="teacher-card" onclick="viewTeacherProfile(' + o.teacher_id + ')">' +
                         '<img src="' + imageUrl + '" class="teacher-image" onerror="this.src=\'https://ui-avatars.com/api/?name=' + encodeURIComponent(o.teacher_name) + '&background=0f5cbf&color=fff&size=120\'" onclick="event.stopPropagation(); showFullImage(this.src)">' +
-                        '<h3>أستاذ ' + escapeHtml(o.teacher_name) + '</h3>' +
+                        '<h3>' + escapeHtml(o.teacher_name) + '</h3>' +
                         '<p class="specialization"><i class="fas fa-book"></i> ' + escapeHtml(o.teacher_specialization || 'تخصص عام') + '</p>' +
                         '<span class="live-badge" style="display:inline-block; margin:6px 0;">🔴 بث مباشر</span>' +
                         '<button class="view-profile-btn" onclick="event.stopPropagation(); viewTeacherProfile(' + o.teacher_id + ')" style="margin-top:10px;">زيارة صفحة الأستاذ</button>' +
