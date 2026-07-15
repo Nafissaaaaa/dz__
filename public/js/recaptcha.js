@@ -1,7 +1,7 @@
 // =============================================
 // تعيين مفتاح reCAPTCHA مباشرة
 // =============================================
-window.RECAPTCHA_SITE_KEY = '6Lcv8kctAAAAAHcoWBv_e87vrjP7I6IzQJSV6THf';
+window.RECAPTCHA_SITE_KEY = '6LdijlUtAAAAAAXQOdr7dVFiWy7mXE31pkhectZ9';
 
 console.log('🔑 تم تعيين مفتاح reCAPTCHA من public/js/recaptcha.js');
 
@@ -66,7 +66,7 @@ function onRecaptchaLoaded() {
     // تأكد من وجود المفتاح
     if (!window.RECAPTCHA_SITE_KEY) {
         console.warn('⚠️ RECAPTCHA_SITE_KEY غير مضبوط. جاري تعيينه يدوياً...');
-        window.RECAPTCHA_SITE_KEY = '6Lcv8kctAAAAAHcoWBv_e87vrjP7I6IzQJSV6THf';
+        window.RECAPTCHA_SITE_KEY = '6LdijlUtAAAAAAXQOdr7dVFiWy7mXE31pkhectZ9';
     }
     
     console.log('🔑 المفتاح المستخدم:', window.RECAPTCHA_SITE_KEY);
@@ -89,7 +89,7 @@ function renderRecaptchaWidget(type, containerId) {
     
     if (!window.RECAPTCHA_SITE_KEY) {
         console.error('❌ RECAPTCHA_SITE_KEY غير موجود! جاري تعيينه...');
-        window.RECAPTCHA_SITE_KEY = '6Lcv8kctAAAAAHcoWBv_e87vrjP7I6IzQJSV6THf';
+        window.RECAPTCHA_SITE_KEY = '6LdijlUtAAAAAAXQOdr7dVFiWy7mXE31pkhectZ9';
     }
     
     var container = document.getElementById(containerId);
@@ -210,6 +210,6 @@ console.log('🔑 المفتاح النهائي:', window.RECAPTCHA_SITE_KEY);
 
 // إذا كان المفتاح لا يزال غير موجود، قم بتعيينه فوراً
 if (!window.RECAPTCHA_SITE_KEY) {
-    window.RECAPTCHA_SITE_KEY = '6Lcv8kctAAAAAHcoWBv_e87vrjP7I6IzQJSV6THf';
+    window.RECAPTCHA_SITE_KEY = '6LdijlUtAAAAAAXQOdr7dVFiWy7mXE31pkhectZ9';
     console.log('🔄 تم إعادة تعيين المفتاح في نهاية الملف');
 }
