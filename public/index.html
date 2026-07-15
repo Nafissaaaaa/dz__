@@ -380,8 +380,8 @@
             margin-left: 6px;
         }
         
-      .hero-content h1 {
-    font-size: 2.5rem;
+ .hero-content h1 {
+    font-size: clamp(1.3rem, 3.4vw, 2.5rem);
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 20px;
@@ -2096,7 +2096,7 @@
            RESPONSIVE
            ============================================================ */
         @media (max-width: 992px) {
-            .hero-content h1 { font-size: 2.4rem; }
+          
             .hero-image .badge-float { display: none; }
             .hero-image .floating-icon { font-size: 140px; }
             .about-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -2110,13 +2110,11 @@
             .referral-guide .guide-grid {
                 grid-template-columns: 1fr;
             }
-            .hero-content h1 {
-        white-space: normal;
-    }
+     
         }
         
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2rem; }
+        
             .nav-links a { padding: 6px 12px; font-size: 0.75rem; }
             .teachers-grid { grid-template-columns: 1fr; }
             .stats-container { flex-direction: column; }
@@ -2169,7 +2167,7 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 1.6rem; }
+        
             .hero-buttons .btn-primary, 
             .hero-buttons .btn-outline, 
             .hero-buttons .btn-success,
